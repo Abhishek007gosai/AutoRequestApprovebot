@@ -34,13 +34,13 @@ from os import path, getenv
 import os, time 
 
 class Config:
-    API_ID = int(getenv("API_ID", "0112234"))
-    API_HASH = getenv("API_HASH", "abcdefg")
-    BOT_TOKEN = getenv("BOT_TOKEN", "1234567891:rkndeveloperDEhdhyjjvjjftSEW")
+    API_ID = int(getenv("API_ID", "29245477"))
+    API_HASH = getenv("API_HASH", "0abc83883262245c90ca337b7a0375c4")
+    BOT_TOKEN = getenv("BOT_TOKEN", "")
  
-    FORCE_SUB = int(getenv("FORCE_SUB", "-1001819787652"))
-    ADMIN = list(map(int, getenv("ADMIN", "6151758586").split()))
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002120760645"))
+    FORCE_SUB = int(getenv("FORCE_SUB", "-1001457313028"))
+    ADMIN = list(map(int, getenv("ADMIN", "7654385403").split()))
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002456565415"))
     
     # database configs
     DB_URL = os.environ.get("DB_URL", "")
