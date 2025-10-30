@@ -16,4 +16,4 @@ RUN useradd -m -u 1000 botuser && chown -R botuser:botuser /app
 USER botuser
 
 # Run the bot
-CMD ["python3", "bot.py"]
+CMD python3 bot.py
