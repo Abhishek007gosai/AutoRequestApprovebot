@@ -1,11 +1,19 @@
-FROM python:3.10
+FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY requirements.txt /app/
+# Copy requirements first for better caching
+COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt
+# Install dependencies
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . /app
+# Copy application code
+COPY . .
 
-CMD python3 bot.py
+# Create a non-root user for security
+RUN useradd -m -u 1000 botuser && chown -R botuser:botuser /app
+USER botuser
+
+# Run the bot
+CMD ["python3", "bot.py"]
